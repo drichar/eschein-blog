@@ -13,7 +13,9 @@
     "date-fns": "2.14.0",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recommended": "^3.0.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",

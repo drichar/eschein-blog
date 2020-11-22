@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import Avatar from '../components/avatar'
 import DateComponent from '../components/date'
-import CoverImage from './cover-image'
 
 export default function PostPreview({
   title,
@@ -12,20 +10,42 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
-      <div className="mb-5">
-        <CoverImage title={title} slug={slug} url={coverImage.url} />
-      </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateComponent dateString={date} />
-      </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      {author && <Avatar name={author.name} picture={author.picture} />}
-    </div>
+    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+      <a className="flex flex-col rounded-lg shadow-lg hover:shadow-xl overflow-hidden">
+        <div className="flex-shrink-0">
+          <img src={coverImage.url} className="h-48 w-full object-cover" alt={`Cover Image for ${title}`} />
+        </div>
+        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+          <div className="flex-1">
+            <p className="text-xl font-semibold text-gray-900">
+              {title}
+            </p>
+            <p className="mt-3 text-base text-gray-500">
+              {excerpt}
+            </p>
+          </div>
+          <div className="mt-6 flex items-center">
+            <div className="flex-shrink-0">
+              <span className="sr-only">{author.name}</span>
+              <img className="h-10 w-10 rounded-full" src={author.picture.url} alt={author.name} />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium text-gray-900">
+                {author.name}
+              </p>
+              <div className="flex space-x-1 text-sm text-gray-500">
+                <DateComponent dateString={date} />
+                <span aria-hidden="true">
+                  &middot;
+                </span>
+                <span>
+                  11 min read
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </Link>
   )
 }

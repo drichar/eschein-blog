@@ -6,10 +6,8 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen pt-20">
-        <Nav />
-        <main>{children}</main>
-      </div>
+      <Nav />
+      <main>{children}</main>
       <Footer />
     </>
   )

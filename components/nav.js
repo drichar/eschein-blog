@@ -1,11 +1,23 @@
 import React, { useState } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
+import ActiveLink from './active-link'
 import MenuIcon from './menu-icon'
 import Button from './button';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const classes = {
+    main: {
+      inactive: 'text-gray-500 hover:text-gray-900 px-4 py-2',
+      active: 'text-gray-900 px-4 py-2'
+    },
+    mobile: {
+      inactive: 'block px-4 py-2 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-100',
+      active: 'block px-4 py-2 rounded-md text-base font-semibold text-white bg-gray-900'
+    }
+  }
 
   return (
     <nav className="fixed w-full top-0 left-0 bg-white">
@@ -13,19 +25,19 @@ export default function Nav() {
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-start">
           <ul className="hidden md:flex lg:text-lg font-semibold">
             <li>
-              <Link href="/">
-                <a className="text-gray-500 hover:text-gray-900 px-4 py-2">Blog</a>
-              </Link>
+              <ActiveLink activeClassName={classes.main.active} href="/">
+                <a className={classes.main.inactive}>Blog</a>
+              </ActiveLink>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-gray-500 hover:text-gray-900 px-4 py-2">Podcast</a>
-              </Link>
+              <ActiveLink activeClassName={classes.main.active} href="/podcast">
+                <a className={classes.main.inactive}>Podcast</a>
+              </ActiveLink>
             </li>
             <li>
-              <Link href="/">
-                <a className="text-gray-500 hover:text-gray-900 px-4 py-2">About</a>
-              </Link>
+              <ActiveLink activeClassName={classes.main.active} href="/about">
+                <a className={classes.main.inactive}>About</a>
+              </ActiveLink>
             </li>
           </ul>
           <div className="md:hidden">
@@ -59,26 +71,26 @@ export default function Nav() {
         })}
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/">
-            <a className="block px-4 py-2 rounded-md text-base font-semibold text-white bg-gray-900">
+          <ActiveLink activeClassName={classes.mobile.active} href="/">
+            <a className={classes.mobile.inactive}>
               Blog
             </a>
-          </Link>
-          <Link href="/">
-            <a className="block px-4 py-2 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-100">
+          </ActiveLink>
+          <ActiveLink activeClassName={classes.mobile.active} href="/podcast">
+            <a className={classes.mobile.inactive}>
               Podcast
             </a>
-          </Link>
-          <Link href="/">
-            <a className="block px-4 py-2 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-100">
+          </ActiveLink>
+          <ActiveLink activeClassName={classes.mobile.active} href="/about">
+            <a className={classes.mobile.inactive}>
               About
             </a>
-          </Link>
-          <Link href="/">
-            <a className="block px-4 py-2 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-100">
+          </ActiveLink>
+          <ActiveLink activeClassName={classes.mobile.active} href="/contact">
+            <a className={classes.mobile.inactive}>
               Contact
             </a>
-          </Link>
+          </ActiveLink>
         </div>
       </div>
     </nav>

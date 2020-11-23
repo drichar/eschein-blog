@@ -1,12 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import ActiveLink from './active-link'
 import MenuIcon from './menu-icon'
-import Button from './button';
+import Button from './button'
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 10) {
+      setScrolled(true)
+    }
+    else {
+      setScrolled(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const classes = {
     main: {
@@ -19,23 +38,28 @@ export default function Nav() {
     }
   }
 
+  // matches '/' and '/posts/[slug]'
+  const blogRegex = /^(?:^\/posts\/|^\/$)/
+
   return (
-    <nav className="fixed w-full top-0 left-0 bg-white">
+    <nav className={cn('fixed w-full top-0 left-0 z-40 bg-white transition-shadow duration-200', {
+      'shadow-md': scrolled
+    })}>
       <div className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5">
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-start">
           <ul className="hidden md:flex lg:text-lg font-semibold">
             <li>
-              <ActiveLink activeClassName={classes.main.active} href="/">
+              <ActiveLink href="/" matches={blogRegex} activeClassName={classes.main.active}>
                 <a className={classes.main.inactive}>Blog</a>
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink activeClassName={classes.main.active} href="/podcast">
+              <ActiveLink href="/podcast" activeClassName={classes.main.active}>
                 <a className={classes.main.inactive}>Podcast</a>
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink activeClassName={classes.main.active} href="/about">
+              <ActiveLink href="/about" activeClassName={classes.main.active}>
                 <a className={classes.main.inactive}>About</a>
               </ActiveLink>
             </li>
@@ -71,22 +95,22 @@ export default function Nav() {
         })}
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <ActiveLink activeClassName={classes.mobile.active} href="/">
+          <ActiveLink href="/" matches={blogRegex} activeClassName={classes.mobile.active}>
             <a className={classes.mobile.inactive}>
               Blog
             </a>
           </ActiveLink>
-          <ActiveLink activeClassName={classes.mobile.active} href="/podcast">
+          <ActiveLink href="/podcast" activeClassName={classes.mobile.active}>
             <a className={classes.mobile.inactive}>
               Podcast
             </a>
           </ActiveLink>
-          <ActiveLink activeClassName={classes.mobile.active} href="/about">
+          <ActiveLink href="/about" activeClassName={classes.mobile.active}>
             <a className={classes.mobile.inactive}>
               About
             </a>
           </ActiveLink>
-          <ActiveLink activeClassName={classes.mobile.active} href="/contact">
+          <ActiveLink href="/contact" activeClassName={classes.mobile.active}>
             <a className={classes.mobile.inactive}>
               Contact
             </a>

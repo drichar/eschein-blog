@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import DateComponent from '../components/date'
+import ReadingTime from '../components/reading-time'
 
 export default function PostPreview({
   title,
@@ -8,6 +9,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  document
 }) {
   return (
     <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -38,9 +40,7 @@ export default function PostPreview({
                 <span aria-hidden="true">
                   &middot;
                 </span>
-                <span>
-                  11 min read
-                </span>
+                <ReadingTime document={document} />
               </div>
             </div>
           </div>

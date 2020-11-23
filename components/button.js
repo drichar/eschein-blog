@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from 'classnames'
 
 export default function Button(props) {
   const {
@@ -7,7 +7,7 @@ export default function Button(props) {
     children,
     className,
     ...other
-  } = props;
+  } = props
   
   return (
     <button

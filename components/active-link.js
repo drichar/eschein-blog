@@ -14,7 +14,7 @@ const ActiveLink = ({ children, activeClassName, matches, ...props }) => {
   // if props.matches (RegExp) is provided, test that instead
   const isActive = !!matches
     ? matches.test(asPath)
-    : asPath === props.href || asPath === props.as;
+    : asPath === props.href || asPath === props.as
 
   const className = isActive
       ? activeClassName.trim()

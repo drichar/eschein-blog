@@ -5,7 +5,7 @@ import Footer from '../components/footer'
 import Meta from '../components/meta'
 
 export default function Layout({ children }) {
-  const { asPath } = useRouter();
+  const { asPath } = useRouter()
   return (
     <>
       <Meta />

@@ -2,7 +2,7 @@ export default function MenuIcon(props) {
   const {
     isOpen,
     onMenuClick
-  } = props;
+  } = props
 
   const renderIcon = () => {
     return isOpen ? (
@@ -37,8 +37,8 @@ export default function MenuIcon(props) {
           d="M4 6h16M4 12h16M4 18h16"
         />
       </svg>
-    );
-  };
+    )
+  }
 
   return (
     <button
@@ -51,5 +51,5 @@ export default function MenuIcon(props) {
       </span>
       {renderIcon()}
     </button>
-  );
+  )
 }

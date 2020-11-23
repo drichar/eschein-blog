@@ -10,7 +10,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
 
   const handleScroll = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 10) {
       setScrolled(true)
     }
@@ -118,5 +118,5 @@ export default function Nav() {
         </div>
       </div>
     </nav>
-  );
+  )
 }

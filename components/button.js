@@ -20,7 +20,7 @@ export default function Button(props) {
         'px-3 py-2 text-xs text-sm leading-4': size === 'sm',
         'px-4 py-2 text-sm': size === 'md',
         'px-4 py-2 text-base': size === 'default',
-        'px-6 py-2.5 text-lg': size === 'lg',
+        'px-6 py-btn-lg text-lg': size === 'lg',
         'px-4 py-2 text-sm lg:text-base 2xl:px-6 2xl:py-2.5 2xl:text-lg': size === 'responsive',
       })}
     >

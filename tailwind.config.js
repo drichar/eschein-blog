@@ -11,6 +11,7 @@ module.exports = {
       },
       spacing: {
         28: '7rem',
+        'btn-lg': '0.625rem',
       },
       letterSpacing: {
         tighter: '-.04em',

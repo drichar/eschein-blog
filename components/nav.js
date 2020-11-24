@@ -5,7 +5,7 @@ import ActiveLink from './active-link'
 import MenuIcon from './menu-icon'
 import Button from './button'
 
-export default function Nav() {
+export default function Nav({ forwardedRef }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -45,7 +45,7 @@ export default function Nav() {
     <nav className={cn('fixed w-full top-0 left-0 z-40 bg-white transition-shadow duration-200', {
       'shadow-md': scrolled
     })}>
-      <div className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5">
+      <div ref={forwardedRef} className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5">
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-start">
           <ul className="hidden md:flex lg:text-lg font-semibold">
             <li>

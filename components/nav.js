@@ -43,7 +43,7 @@ export default function Nav({ forwardedRef }) {
 
   return (
     <nav className={cn('fixed w-full top-0 left-0 z-40 bg-white transition-shadow duration-200', {
-      'shadow-md': scrolled
+      'shadow-md': scrolled || menuOpen
     })}>
       <div ref={forwardedRef} className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5">
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-start">
@@ -79,6 +79,7 @@ export default function Nav({ forwardedRef }) {
           </Link>
         </div>
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-end">
+        <Link href="/contact" passHref>
           <Button
             variant="primary"
             size="responsive"
@@ -86,6 +87,7 @@ export default function Nav({ forwardedRef }) {
           >
             Contact
           </Button>
+        </Link>
         </div>
       </div>
       <div

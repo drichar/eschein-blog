@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Nav from './nav'
 import Footer from './footer'
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('resize', handleResize)
 
     handleResize()

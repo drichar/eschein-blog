@@ -60,7 +60,7 @@ export default function Footer() {
                 <ul className="mt-4 space-y-4">
                   <li>
                     <Link href="/privacy">
-                      <a href="#" className="text-base text-gray-300 hover:text-white">
+                      <a className="text-base text-gray-300 hover:text-white">
                         Privacy
                       </a>
                     </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
 
                   <li>
                     <Link href="/terms">
-                      <a href="#" className="text-base text-gray-300 hover:text-white">
+                      <a className="text-base text-gray-300 hover:text-white">
                         Terms
                       </a>
                     </Link>

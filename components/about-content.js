@@ -7,7 +7,7 @@ export default function AboutContent() {
         <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen"></div>
         <div className="mx-auto text-base max-w-prose lg:max-w-none">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">About</h2>
-          <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Evan Schein</h3>
+          <h3 className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-5xl">Evan Schein</h3>
         </div>
         <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative lg:row-start-1 lg:col-start-2">

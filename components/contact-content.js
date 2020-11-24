@@ -10,7 +10,7 @@ export default function ContactContent() {
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="max-w-lg mx-auto">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Contact</h2>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
               Get in touch
             </h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">

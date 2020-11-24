@@ -16,7 +16,7 @@ export default function PostHeader({ title, date, author, document }) {
             picture={author.picture}
           />
           <div className="ml-3">
-            <p className="text-sm font-medium text-gray-900">
+            <p className="text-base font-medium text-gray-900">
               {author.name}
             </p>
             <div className="flex space-x-1 text-sm text-gray-500">

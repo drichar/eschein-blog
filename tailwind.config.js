@@ -10,7 +10,7 @@ module.exports = {
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         success: '#0070f3',
-        cyan: colors.cyan,
+        blue: colors.cyan,
         'white-5': 'var(--es-white-5)',
         'white-10': 'var(--es-white-10)',
         'white-20': 'var(--es-white-20)',
@@ -32,6 +32,7 @@ module.exports = {
         'black-80': 'var(--es-black-80)',
         'black-90': 'var(--es-black-90)',
         black: 'var(--es-black)',
+        gray: colors.blueGray
       },
       spacing: {
         28: '7rem',
@@ -54,9 +55,9 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: '#2563EB',
+              color: colors.cyan['600'],
               '&:hover': {
-                color: '#1D4ED8',
+                color: colors.cyan['700'],
               },
             },
           },

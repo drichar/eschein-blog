@@ -15,8 +15,8 @@ function Button(props, ref) {
       ref={ref}
       {...other}
       className={cn(`inline-flex items-center font-semibold rounded-md shadow-sm focus-ring ${className}`, {
-        'text-white bg-cyan-600 hover:bg-cyan-700': variant === 'primary',
-        'text-cyan-700 bg-cyan-100 hover:bg-cyan-200': variant === 'secondary',
+        'text-white bg-blue-600 hover:bg-blue-700': variant === 'primary',
+        'text-blue-700 bg-blue-100 hover:bg-blue-200': variant === 'secondary',
         'border border-gray-300 text-gray-700 bg-white hover:bg-gray-50': variant === 'white',
         'px-2.5 py-1.5 text-xs': size === 'xs',
         'px-3 py-2 text-xs text-sm leading-4': size === 'sm',

@@ -5,12 +5,16 @@ module.exports = {
   purge: ['./components/**/*.js', './components/**/*.css'],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px'
+      },
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         success: '#0070f3',
-        blue: colors.cyan,
+        blue: colors.lightBlue,
+        green: colors.cyan,
         'white-5': 'var(--es-white-5)',
         'white-10': 'var(--es-white-10)',
         'white-20': 'var(--es-white-20)',
@@ -55,9 +59,9 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: colors.cyan['600'],
+              color: colors.lightBlue['600'],
               '&:hover': {
-                color: colors.cyan['700'],
+                color: colors.lightBlue['700'],
               },
             },
           },

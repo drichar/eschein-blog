@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from 'react'
 import cn from 'classnames'
 
 function Button(props, ref) {

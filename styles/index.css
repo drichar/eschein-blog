@@ -32,9 +32,19 @@
   pointer-events: all;
 }
 
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 5.5rem !important;
+  }
+}
+
 @media (min-width: 1280px) {
   .home-hero {
     height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 6.5rem !important;
   }
 }
 
@@ -42,11 +52,25 @@
   .home-hero {
     height: 80vh;
   }
+
+  .hero-title {
+    font-size: 8rem !important;
+  }
 }
 
 @media (min-width: 1536px) {
   .home-hero {
     height: 90vh;
+  }
+
+  .hero-title {
+    font-size: 8.5rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-title {
+    font-size: 10rem !important;
   }
 }
 

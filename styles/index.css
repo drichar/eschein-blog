@@ -7,3 +7,94 @@
 .focus-ring {
   @apply focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-75;
 }
+
+.menu-home {
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.menu-home.is-visible {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.menu-home .logo {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-home.is-visible .logo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 5.5rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home-hero {
+    height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 6.5rem !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-hero {
+    height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 8rem !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .home-hero {
+    height: 90vh;
+  }
+
+  .hero-title {
+    font-size: 8.5rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-title {
+    font-size: 10rem !important;
+  }
+}
+
+:root {
+  --es-white-5: rgba(255, 255, 255, 0.05);
+  --es-white-10: rgba(255, 255, 255, 0.1);
+  --es-white-20: rgba(255, 255, 255, 0.2);
+  --es-white-30: rgba(255, 255, 255, 0.3);
+  --es-white-40: rgba(255, 255, 255, 0.4);
+  --es-white-50: rgba(255, 255, 255, 0.5);
+  --es-white-60: rgba(255, 255, 255, 0.6);
+  --es-white-70: rgba(255, 255, 255, 0.7);
+  --es-white-80: rgba(255, 255, 255, 0.8);
+  --es-white-90: rgba(255, 255, 255, 0.9);
+  --es-white: #fff;
+  --es-black-5: rgba(5, 5, 5, 0.05);
+  --es-black-10: rgba(5, 5, 5, 0.1);
+  --es-black-20: rgba(5, 5, 5, 0.2);
+  --es-black-30: rgba(5, 5, 5, 0.3);
+  --es-black-40: rgba(5, 5, 5, 0.4);
+  --es-black-50: rgba(5, 5, 5, 0.5);
+  --es-black-60: rgba(5, 5, 5, 0.6);
+  --es-black-70: rgba(5, 5, 5, 0.7);
+  --es-black-80: rgba(5, 5, 5, 0.8);
+  --es-black-90: rgba(5, 5, 5, 0.9);
+  --es-black: #050505;
+}

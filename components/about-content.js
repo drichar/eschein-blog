@@ -28,6 +28,7 @@ export default function AboutContent() {
                     alt="Evan standing in front of New York City street"
                     width={1075}
                     height={1400}
+                    priority
                   />
                 </div>
                 <figcaption className="mt-3 flex text-sm text-gray-500">

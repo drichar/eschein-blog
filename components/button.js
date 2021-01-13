@@ -1,6 +1,7 @@
+import { forwardRef } from 'react'
 import cn from 'classnames'
 
-export default function Button(props) {
+function Button(props, ref) {
   const {
     size = 'default',
     variant = 'primary',
@@ -11,6 +12,7 @@ export default function Button(props) {
   
   return (
     <button
+      ref={ref}
       {...other}
       className={cn(`inline-flex items-center font-semibold rounded-md shadow-sm focus-ring ${className}`, {
         'text-white bg-blue-600 hover:bg-blue-700': variant === 'primary',
@@ -28,3 +30,5 @@ export default function Button(props) {
     </button>
   )
 }
+
+export default forwardRef(Button)

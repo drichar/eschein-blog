@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
 import ActiveLink from './active-link'
@@ -8,6 +9,9 @@ import Button from './button'
 export default function Nav({ forwardedRef }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+
+  const router = useRouter()
+  const isHome = router.route === '/'
 
   const handleScroll = () => {
     const offset = window.scrollY
@@ -29,8 +33,8 @@ export default function Nav({ forwardedRef }) {
 
   const classes = {
     main: {
-      inactive: 'text-gray-500 hover:text-gray-900 px-4 py-2',
-      active: 'text-gray-900 px-4 py-2'
+      inactive: isHome && !scrolled ? 'text-white-50 hover:text-white-90 lg:text-xl 3xl:text-2xl px-4 py-2' : 'text-black-50 hover:text-black-90 px-4 py-2',
+      active: isHome && !scrolled ? 'text-white-90 lg:text-xl 3xl:text-2xl px-4 py-2 3xl:px-5 3xl:py-3' : 'text-black-90 px-4 py-2'
     },
     mobile: {
       inactive: 'block px-4 py-2 rounded-md text-base font-semibold text-gray-900 hover:bg-gray-100',
@@ -38,14 +42,16 @@ export default function Nav({ forwardedRef }) {
     }
   }
 
-  // matches '/' and '/posts/[slug]'
-  const blogRegex = /^(?:^\/posts\/|^\/$)/
+  // matches '/' and '/posts/[slug]' and '/#blog'
+  const blogRegex = /^(?:^\/(#blog|posts\/)|^\/$)/
 
   return (
-    <nav className={cn('fixed w-full top-0 left-0 z-40 bg-white transition-shadow duration-200', {
+    <nav className={cn('fixed w-full top-0 left-0 z-40 transition bg-white transition-shadow duration-200', {
+      'menu-home': isHome,
+      'is-visible': scrolled || menuOpen,
       'shadow-md': scrolled || menuOpen
     })}>
-      <div ref={forwardedRef} className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5">
+      <div ref={forwardedRef} className="flex flex-row items-center justify-between py-3 px-3 md:py-4 md:px-5 3xl:py-5 3xl:px-6">
         <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-start">
           <ul className="hidden md:flex lg:text-lg font-semibold">
             <li>
@@ -67,27 +73,31 @@ export default function Nav({ forwardedRef }) {
           <div className="md:hidden">
             <MenuIcon
               isOpen={menuOpen}
+              isHome={isHome}
+              scrolled={scrolled}
               onMenuClick={() => setMenuOpen(!menuOpen)}
             />
           </div>
         </div>
-        <div className="flex-grow md:flex-1 flex justify-center">
+        <div className="logo flex-grow md:flex-1 flex justify-center">
           <Link href="/">
-            <a className="font-bold text-2xl md:text-3xl 2xl:text-4xl tracking-tight px-4 py-1 rounded-md">
+            <a className="font-bold text-gray-900 text-2xl md:text-3xl 2xl:text-4xl tracking-tight px-4 py-1 rounded-md">
               Evan Schein
             </a>
           </Link>
         </div>
-        <div className="flex-none w-11 md:flex-1 md:w-auto flex justify-end">
-        <Link href="/contact" passHref>
-          <Button
-            variant="primary"
-            size="responsive"
-            className="hidden md:inline-block"
-          >
-            Contact
-          </Button>
-        </Link>
+        <div className={cn('flex-none w-11 md:flex-1 md:w-auto flex justify-end transition-opacity', {
+          'opacity-0 pointer-events-none': isHome && !scrolled
+        })}>
+          <Link href="/contact" passHref>
+            <Button
+              variant="primary"
+              size="responsive"
+              className="hidden md:inline-block"
+            >
+              Contact
+            </Button>
+          </Link>
         </div>
       </div>
       <div

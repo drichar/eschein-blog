@@ -62,7 +62,6 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const allPodcasts = await getAllPodcastsWithSlug()
-  console.log('allPodcasts', allPodcasts)
   return {
     paths: allPodcasts?.map(({ slug }) => `/podcasts/${slug}`) ?? [],
     fallback: true,

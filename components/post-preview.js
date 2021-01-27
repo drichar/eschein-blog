@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import DateComponent from '../components/date'
 import ReadingTime from '../components/reading-time'
 
@@ -14,8 +15,13 @@ export default function PostPreview({
   return (
     <Link as={`/posts/${slug}`} href="/posts/[slug]">
       <a className="flex flex-col rounded-lg shadow-lg hover:shadow-xl overflow-hidden">
-        <div className="flex-shrink-0">
-          <img src={coverImage.url} className="h-48 w-full object-cover" alt={`Cover Image for ${title}`} />
+        <div className="flex-shrink-0 relative h-48">
+          <Image
+            src={coverImage.url}
+            alt={`Cover Image for ${title}`}
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">

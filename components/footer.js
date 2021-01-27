@@ -37,7 +37,7 @@ export default function Footer() {
                   </li>
 
                   <li>
-                    <Link href="/podcast">
+                    <Link href="/schein-on">
                       <a className="text-base text-gray-300 hover:text-white">
                         Podcast
                       </a>
@@ -126,7 +126,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-            &copy; 2020 Evan Schein. All rights reserved.
+            &copy; {new Date().getFullYear()} Evan Schein. All rights reserved.
           </p>
         </div>
       </div>

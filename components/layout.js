@@ -26,13 +26,13 @@ export default function Layout({ children }) {
   }, [])
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Meta />
       <Nav forwardedRef={navRef} />
-      <main style={{ marginTop: navHeight }}>
+      <main className="flex-grow" style={{ paddingTop: navHeight }}>
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

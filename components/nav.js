@@ -46,7 +46,7 @@ export default function Nav({ forwardedRef }) {
   const blogRegex = /^(?:^\/(#blog|posts\/)|^\/$)/
 
   // matches '/podcasts' and '/podcasts/[slug]'
-  const podcastRegex = /^(?:^\/podcasts|$)/
+  const podcastRegex = /^(?:^\/(schein-on|podcasts\/)|^\/$)/
 
   return (
     <nav className={cn('fixed w-full top-0 left-0 z-40 transition bg-white transition-shadow duration-200', {
@@ -63,7 +63,7 @@ export default function Nav({ forwardedRef }) {
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/podcast" matches={podcastRegex} activeClassName={classes.main.active}>
+              <ActiveLink href="/schein-on" matches={podcastRegex} activeClassName={classes.main.active}>
                 <a className={classes.main.inactive}>Podcast</a>
               </ActiveLink>
             </li>

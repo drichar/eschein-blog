@@ -74,6 +74,10 @@
   }
 }
 
+.cover-image > div {
+  @apply shadow-small;
+}
+
 :root {
   --es-white-5: rgba(255, 255, 255, 0.05);
   --es-white-10: rgba(255, 255, 255, 0.1);

@@ -6,7 +6,7 @@ import PostBody from './post-body'
 export default function PostContent({ post }) {
   return (
     <>
-      <CoverImage title={post.title} url={post.coverImage.url} />
+      <CoverImage title={post.title} coverImage={post.coverImage} />
       <PostDecorate>
         <div className="relative px-4 sm:px-6 lg:px-8">
           <PostHeader

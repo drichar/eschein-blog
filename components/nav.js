@@ -45,6 +45,9 @@ export default function Nav({ forwardedRef }) {
   // matches '/' and '/posts/[slug]' and '/#blog'
   const blogRegex = /^(?:^\/(#blog|posts\/)|^\/$)/
 
+  // matches '/podcasts' and '/podcasts/[slug]'
+  const podcastRegex = /^(?:^\/podcasts|$)/
+
   return (
     <nav className={cn('fixed w-full top-0 left-0 z-40 transition bg-white transition-shadow duration-200', {
       'menu-home': isHome,
@@ -60,7 +63,7 @@ export default function Nav({ forwardedRef }) {
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/podcast" activeClassName={classes.main.active}>
+              <ActiveLink href="/podcast" matches={podcastRegex} activeClassName={classes.main.active}>
                 <a className={classes.main.inactive}>Podcast</a>
               </ActiveLink>
             </li>

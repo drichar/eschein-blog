@@ -115,7 +115,7 @@ export default function Nav({ forwardedRef }) {
               Blog
             </a>
           </ActiveLink>
-          <ActiveLink href="/podcast" activeClassName={classes.mobile.active}>
+          <ActiveLink href="/schein-on" matches={podcastRegex} activeClassName={classes.mobile.active}>
             <a className={classes.mobile.inactive}>
               Podcast
             </a>

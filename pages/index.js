@@ -4,6 +4,7 @@ import MoreStories from '../components/more-stories'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import PodcastCta from '../components/podcast-cta'
+import LogoCloud from '../components/logo-cloud'
 import { getAllPostsForHome } from '../lib/api'
 
 export default function Index({ preview, allPosts }) {
@@ -14,6 +15,7 @@ export default function Index({ preview, allPosts }) {
       </Head>
       <Hero />
       <PodcastCta />
+      <LogoCloud />
       <Container>
         <div className="mb-8">
           <h2 className="text-base font-semibold text-blue-600 uppercase tracking-wide">Blog</h2>

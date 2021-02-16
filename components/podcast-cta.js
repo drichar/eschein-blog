@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function PodcastCta() {
   return (
-    <div className="bg-gray-50 mb-16">
+    <div className="bg-gray-50 mb-8">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl xl:text-5xl">

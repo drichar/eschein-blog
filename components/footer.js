@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -79,9 +80,60 @@ export default function Footer() {
           </div>
           <div className="mt-12 xl:mt-0">
             <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-              Subscribe to my newsletter
+              Subscribe to Schein On
             </h3>
-            <p className="mt-4 text-base text-gray-300">
+            <div className="flex flex-wrap">
+              <a href="https://podcasts.apple.com/us/podcast/schein-on/id1541360422" target="_blank" className="mt-4 mr-6">
+                <Image
+                  className="rounded"
+                  src="/images/subscribe-apple.png"
+                  alt="Listen on Apple Podcasts"
+                  width={125}
+                  height={32}
+                />
+              </a>
+              <a href="https://open.spotify.com/show/5p57nZfu9ymZU7eS4z3hea?si=NjKS_TqeQKezsGJGwya7rQ" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-spotify.png"
+                  alt="Spotify"
+                  width={107}
+                  height={32}
+                />
+              </a>
+              <a href="https://www.breaker.audio/p/schein-on" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-breaker.png"
+                  alt="Listen on Breaker"
+                  width={124}
+                  height={32}
+                />
+              </a>
+              <a href="https://castbox.fm/channel/id3545929?country=us" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-castbox.png"
+                  alt="Castbox"
+                  width={87}
+                  height={32}
+                />
+              </a>
+              <a href="https://radiopublic.com/schein-on-8gx1gZ" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-radiopublic.png"
+                  alt="Radio Public"
+                  width={95}
+                  height={32}
+                />
+              </a>
+              <a href="https://www.stitcher.com/show/schein-on" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-stitcher.png"
+                  alt="Stitcher"
+                  width={77}
+                  height={32}
+                />
+              </a>
+            </div>
+            {/* <p className="mt-4 text-base text-gray-300">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>
             <form className="mt-4 sm:flex sm:max-w-md">
@@ -92,7 +144,7 @@ export default function Footer() {
                   Subscribe
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">

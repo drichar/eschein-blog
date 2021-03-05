@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
           <div className="mt-12 xl:mt-0">
             <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-              Subscribe to Schein On
+              Subscribe to Schein On:
             </h3>
             <div className="flex flex-wrap">
               <a href="https://podcasts.apple.com/us/podcast/schein-on/id1541360422" target="_blank" className="mt-4 mr-6">

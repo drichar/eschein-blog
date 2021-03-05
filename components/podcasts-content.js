@@ -20,36 +20,23 @@ export default function PodcastsContent({ allPodcasts }) {
         </div> */}
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-md mt-8">
-        <ul className="divide-y divide-gray-200">
+      <div className="mt-8">
+        <ul>
           {allPodcasts.map((podcast) => (
-            <li>
-              <Link as={`/podcasts/${podcast.slug}`} href="/podcasts/[slug]">
-                <a href="#" className="block hover:bg-gray-50">
-                  <div className="flex items-center px-4 py-4 sm:px-6">
-                    <div className="min-w-0 flex-1 flex items-center">
-                      <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
-                        <div>
-                          <p className="text-sm font-medium text-blue-600 truncate">{podcast.title}</p>
-                        </div>
-                        <div className="hidden md:block">
-                          <div>
-                            <p className="text-sm text-gray-900">
-                              <DateComponent dateString={podcast.date} />
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                    {/* Heroicon name: chevron-right */}
-                      <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </Link>
+            <li key={podcast.id} className="mb-16 shadow-xl">
+              <iframe
+                src={`https://webplayer.adorilabs.com/${podcast.id}`}
+                style={{
+                  minWidth: '610px',
+                  maxHeight: '304px'
+                }}
+                width='100%'
+                height='304'
+                title={podcast.title}
+                frameBorder='0'
+                scrolling='no'
+                allow='autoplay'
+              />
             </li>
           ))}
         </ul>

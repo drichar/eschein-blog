@@ -92,6 +92,14 @@ export default function Footer() {
                   height={32}
                 />
               </a>
+              <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9zdGF0aWMuYWRvcmlsYWJzLmNvbS9mZWVkL3NjaGVpbi1vbi54bWw" target="_blank" className="mt-4 mr-6">
+                <Image
+                  src="/images/subscribe-google.png"
+                  alt="Listen on Google Podcasts"
+                  width={126}
+                  height={32}
+                />
+              </a>
               <a href="https://open.spotify.com/show/5p57nZfu9ymZU7eS4z3hea?si=NjKS_TqeQKezsGJGwya7rQ" target="_blank" className="mt-4 mr-6">
                 <Image
                   src="/images/subscribe-spotify.png"

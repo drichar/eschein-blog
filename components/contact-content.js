@@ -1,6 +1,73 @@
+import { useState } from 'react'
+import axios from 'axios'
 import Button from './button'
+import Alert from './alert'
 
 export default function ContactContent() {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      })
+      setInputs({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+    } else {
+      setStatus({
+        info: { error: true, msg: msg },
+      })
+    }
+  }
+
+  const handleChange = (e) => {
+    e.persist()
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }))
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
+    axios({
+      method: 'POST',
+      url: 'https://formspree.io/f/mzbknwlj',
+      data: inputs,
+    })
+      .then((res) => {
+        handleServerResponse(
+          true,
+          'Thank you, your message has been submitted.'
+        )
+      })
+      .catch((error) => {
+        handleServerResponse(false, error.response.data.error)
+      })
+  }
+
   return (
     <div className="relative bg-white">
       <div className="absolute inset-0">
@@ -55,33 +122,81 @@ export default function ContactContent() {
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-y-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 mb-8">
               <div>
-                <label htmlFor="full_name" className="sr-only">Full name</label>
-                <input type="text" id="full_name" className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md" placeholder="Full name" />
+                <label htmlFor="name" className="sr-only">Full name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+                  placeholder="Full name"
+                  onChange={handleChange}
+                  required
+                  value={inputs.name}
+                />
               </div>
               <div>
                 <label htmlFor="email" className="sr-only">Email</label>
-                <input id="email" type="email" className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md" placeholder="Email" />
+                <input
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+                  placeholder="Email"
+                  onChange={handleChange}
+                  required
+                  value={inputs.email}
+                />
               </div>
               <div>
                 <label htmlFor="phone" className="sr-only">Phone</label>
-                <input type="text" id="phone" className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md" placeholder="Phone" />
+                <input
+                  type="text"
+                  id="phone"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+                  placeholder="Phone"
+                  onChange={handleChange}
+                  value={inputs.phone}
+                />
               </div>
               <div>
                 <label htmlFor="message" className="sr-only">Message</label>
-                <textarea id="message" rows="4" className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md" placeholder="Message"></textarea>
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+                  placeholder="Message"
+                  onChange={handleChange}
+                  required
+                  value={inputs.message}
+                />
               </div>
               <div>
                 <Button
                   className="w-full justify-center md:w-auto"
                   type="submit"
                   size="lg"
+                  disabled={status.submitting}
                 >
-                  Submit
+                  {!status.submitting
+                    ? !status.submitted
+                      ? 'Submit'
+                      : 'Submitted'
+                    : 'Submitting...'}
                 </Button>
               </div>
+              <input type="hidden" name="_subject" value="New message from scheinondivorce.com" />
             </form>
+            {status.info.error && (
+              <Alert type="error">
+                {status.info.msg}
+              </Alert>
+            )}
+            {!status.info.error && status.info.msg && (
+              <Alert type="success">
+                {status.info.msg}
+              </Alert>
+            )}
           </div>
         </div>
       </div>

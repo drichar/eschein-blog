@@ -12,7 +12,7 @@ export default function PodcastsContent({ allPodcasts }) {
             <li key={podcast.id} className="mb-24 lg:mb-16 relative">
               <iframe
                 src={`https://webplayer.adorilabs.com/${podcast.id}`}
-                className="h-96 w-full mb-8 shadow-xl"
+                className="h-96 w-full mb-8 shadow-xl bg-black"
                 title={podcast.title}
                 frameBorder='0'
                 scrolling='no'

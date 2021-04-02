@@ -32,10 +32,6 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
-        name="description"
-        content="Evan is a family law and divorce attorney in New York City, and a partner and the Head of Litigation at Berkman Bottger Newman &amp; Schein. He is the host of the podcast Schein On, where he and his guests tackle tough legal, financial, and life issues, and talk about sports whenever they have an excuse."
-      />
-      <meta
         name="keywords"
         content="Evan Schein, Evan Schein podcast, Evan Schein attorney, legal podcast, lawyer podcast, divorce podcast, child custody podcast, divorce blog, legal blog, divorce, family law, NYC divorce, New York divorce, New York family law"
       />

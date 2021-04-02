@@ -32,6 +32,7 @@ export default function Post({ post, morePosts, preview }) {
                   {post.title} | Evan Schein
                 </title>
                 <meta property="og:image" content={post.coverImage.url} />
+                <meta name="description" content={post.excerpt} />
               </Head>
 
               <PostContent post={post} />

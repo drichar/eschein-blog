@@ -41,6 +41,7 @@
 @media (min-width: 1280px) {
   .home-hero {
     height: 70vh;
+    min-height: 800px !important;
   }
 
   .hero-title {
@@ -51,6 +52,7 @@
 @media (min-width: 1440px) {
   .home-hero {
     height: 80vh;
+    min-height: 900px !important;
   }
 
   .hero-title {
@@ -61,6 +63,7 @@
 @media (min-width: 1536px) {
   .home-hero {
     height: 90vh;
+    min-height: 1000px !important;
   }
 
   .hero-title {
@@ -69,6 +72,10 @@
 }
 
 @media (min-width: 1920px) {
+  .home-hero {
+    min-height: 1200px !important;
+  }
+
   .hero-title {
     font-size: 10rem !important;
   }

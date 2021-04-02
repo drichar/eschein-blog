@@ -185,13 +185,13 @@ export default function Footer() {
               </svg>
             </a>
 
-            <a href="https://www.joinclubhouse.com/@yourclubhouseusername" target="_blank" className="text-gray-400 hover:text-gray-300">
+            {/* <a href="https://www.joinclubhouse.com/@yourclubhouseusername" target="_blank" className="text-gray-400 hover:text-gray-300">
               <span className="sr-only">Clubhouse</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M1.74,17.87C0.79,17.87,0,18.66,0,19.61s0.79,1.74,1.74,1.74s1.74-0.79,1.74-1.74S2.68,17.87,1.74,17.87z"/>
                 <path d="M23.21,2.65L12.22,6.16V2.68L0.38,6.47v10.04l10.2-3.25v3.44L24,12.41l-3.63-3.54L23.21,2.65z M10.58,11.53l-8.59,2.75 v-6.6l8.59-2.75V11.53z M20.97,11.65l-8.75,2.78v-6.6l8.05-2.59l-1.86,3.92L20.97,11.65z"/>
               </svg>
-            </a>
+            </a> */}
           </div>
           <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
             &copy; {new Date().getFullYear()} Evan Schein. All rights reserved.

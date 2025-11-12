@@ -5,7 +5,7 @@ export default function PodcastBody({ podcast }) {
   return (
     <div className="mt-6 prose prose-blue prose-lg text-gray-500 mx-auto">
       <div className="mb-10">
-        <PodcastPlayer url={podcast.url} />
+        <PodcastPlayer spotifyEpisodeUrl={podcast.spotifyEpisodeUrl} />
       </div>
       {documentToReactComponents(podcast.content.json)}
     </div>

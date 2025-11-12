@@ -11,11 +11,10 @@ export default function PodcastsHeader() {
           <p className="my-5 text-xl text-gray-500">
             Subscribe wherever you get your podcasts:
           </p>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 bg-gray-50 rounded-xl px-8 py-6">
             <a
               href="https://podcasts.apple.com/us/podcast/schein-on/id1541360422"
               target="_blank"
-              className="mt-4 mr-6"
             >
               <Image
                 className="rounded"
@@ -26,14 +25,13 @@ export default function PodcastsHeader() {
               />
             </a>
             <a
-              href="https://podcasts.google.com/feed/aHR0cHM6Ly9zdGF0aWMuYWRvcmlsYWJzLmNvbS9mZWVkL3NjaGVpbi1vbi54bWw"
+              href="https://www.youtube.com/@scheinonpodcast7000"
               target="_blank"
-              className="mt-4 mr-6"
             >
               <Image
                 className="rounded"
-                src="/images/subscribe-google.png"
-                alt="Listen on Google Podcasts"
+                src="/images/YouTube_Logo_2017.svg.png"
+                alt="Listen on YouTube"
                 width={126 * 1.25}
                 height={32 * 1.25}
               />
@@ -41,7 +39,6 @@ export default function PodcastsHeader() {
             <a
               href="https://open.spotify.com/show/5p57nZfu9ymZU7eS4z3hea?si=NjKS_TqeQKezsGJGwya7rQ"
               target="_blank"
-              className="mt-4 mr-6"
             >
               <Image
                 src="/images/subscribe-spotify.png"
@@ -51,21 +48,8 @@ export default function PodcastsHeader() {
               />
             </a>
             <a
-              href="https://www.breaker.audio/p/schein-on"
-              target="_blank"
-              className="mt-4 mr-6"
-            >
-              <Image
-                src="/images/subscribe-breaker.png"
-                alt="Listen on Breaker"
-                width={124 * 1.25}
-                height={32 * 1.25}
-              />
-            </a>
-            <a
               href="https://castbox.fm/channel/id3545929?country=us"
               target="_blank"
-              className="mt-4 mr-6"
             >
               <Image
                 src="/images/subscribe-castbox.png"
@@ -74,11 +58,7 @@ export default function PodcastsHeader() {
                 height={32 * 1.25}
               />
             </a>
-            <a
-              href="https://radiopublic.com/schein-on-8gx1gZ"
-              target="_blank"
-              className="mt-4 mr-6"
-            >
+            <a href="https://radiopublic.com/schein-on-8gx1gZ" target="_blank">
               <Image
                 src="/images/subscribe-radiopublic-red.png"
                 alt="Radio Public"
@@ -86,18 +66,17 @@ export default function PodcastsHeader() {
                 height={32 * 1.25}
               />
             </a>
-            <a
-              href="https://www.stitcher.com/show/schein-on"
+            {/* <a
+              href="#"
               target="_blank"
-              className="mt-4 mr-6"
             >
               <Image
-                src="/images/subscribe-stitcher-blk.png"
-                alt="Stitcher"
-                width={77 * 1.25}
+                src="/images/subscribe-pandora.png"
+                alt="Pandora"
+                width={95 * 1.25}
                 height={32 * 1.25}
               />
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="hidden lg:block mt-10 w-full max-w-xs">

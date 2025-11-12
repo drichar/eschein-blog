@@ -28,7 +28,7 @@ export default function Podcast({ podcast, preview }) {
           <>
             <article>
               <Head>
-                <title>{podcast.title} | Evan Schein</title>
+                <title>{`${podcast.title} | Evan Schein`}</title>
                 <meta property="og:image" content={podcast.ogImage.url} />
               </Head>
 

@@ -28,7 +28,7 @@ export default function Post({ post, morePosts, preview }) {
           <>
             <article>
               <Head>
-                <title>{post.title} | Evan Schein</title>
+                <title>{`${post.title} | Evan Schein`}</title>
                 <meta property="og:image" content={post.coverImage.url} />
                 <meta name="description" content={post.excerpt} />
               </Head>

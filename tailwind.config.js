@@ -6,7 +6,6 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        adoriFull: '816px',
         '3xl': '1920px',
       },
       colors: {

@@ -1,18 +1,30 @@
-export default function PodcastPlayer({ url }) {
-  const embedUrl = url.replace('podcasts.apple.com', 'embed.podcasts.apple.com')
+export default function PodcastPlayer({ spotifyEpisodeUrl }) {
+  if (!spotifyEpisodeUrl) {
+    return null
+  }
+
+  // Convert Spotify URL to embed format
+  // Example: https://open.spotify.com/episode/0EuokVAyWxP61NUo3T0SmT
+  // Becomes: https://open.spotify.com/embed/episode/0EuokVAyWxP61NUo3T0SmT
+  const embedUrl = spotifyEpisodeUrl.replace(
+    'open.spotify.com/',
+    'open.spotify.com/embed/',
+  )
 
   return (
     <iframe
-      allow="autoplay *; encrypted-media *; fullscreen *"
-      frameBorder="0"
-      height="175"
+      data-testid="embed-iframe"
       style={{
+        borderRadius: '12px',
         width: '100%',
-        overflow: 'hidden',
-        background: 'transparent',
       }}
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-      src={embedUrl}
-    ></iframe>
+      src={`${embedUrl}?utm_source=generator`}
+      width="100%"
+      height="352"
+      frameBorder="0"
+      allowFullScreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    />
   )
 }

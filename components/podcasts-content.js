@@ -2,18 +2,18 @@ import PodcastsHeader from './podcasts-header'
 import DateComponent from './date'
 
 export default function PodcastsContent({ allPodcasts }) {
+  // Filter to only show podcasts with Spotify URLs
+  const podcastsWithSpotify = allPodcasts.filter(
+    (podcast) => podcast.spotifyEpisodeUrl,
+  )
+
   return (
     <div className="my-16">
       <PodcastsHeader />
 
       <div className="mt-8">
         <ul>
-          {allPodcasts.map((podcast) => {
-            if (!podcast.spotifyEpisodeUrl) {
-              return null
-            }
-
-            // Convert Spotify URL to embed format
+          {podcastsWithSpotify.map((podcast) => {
             const embedUrl = podcast.spotifyEpisodeUrl.replace(
               'open.spotify.com/',
               'open.spotify.com/embed/',

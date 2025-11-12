@@ -1,12 +1,15 @@
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import React, { Children } from 'react'
 
-const ActiveLink = ({ children, activeClassName, matches, ...props }) => {
+const ActiveLink = ({
+  children,
+  activeClassName,
+  inactiveClassName,
+  matches,
+  ...props
+}) => {
   const { asPath } = useRouter()
-  const child = Children.only(children)
-  const childClassName = child.props.className || ''
 
   // `/` will be matched via props.href
   // `/about.js` will be matched via props.href
@@ -16,21 +19,18 @@ const ActiveLink = ({ children, activeClassName, matches, ...props }) => {
     ? matches.test(asPath)
     : asPath === props.href || asPath === props.as
 
-  const className = isActive
-      ? activeClassName.trim()
-      : childClassName
+  const className = isActive ? activeClassName : inactiveClassName
 
   return (
-    <Link {...props}>
-      {React.cloneElement(child, {
-        className: className || null,
-      })}
+    <Link {...props} className={className}>
+      {children}
     </Link>
   )
 }
 
 ActiveLink.propTypes = {
   activeClassName: PropTypes.string.isRequired,
+  inactiveClassName: PropTypes.string,
   matches: PropTypes.instanceOf(RegExp),
 }
 

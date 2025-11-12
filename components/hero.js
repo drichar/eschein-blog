@@ -14,10 +14,11 @@ export default function Hero() {
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow">
-              <Link href="/contact">
-                <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-500 lg:py-4 md:text-xl md:px-10 xl:text-2xl">
-                  Contact
-                </a>
+              <Link
+                href="/contact"
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-500 lg:py-4 md:text-xl md:px-10 xl:text-2xl"
+              >
+                Contact
               </Link>
             </div>
           </div>

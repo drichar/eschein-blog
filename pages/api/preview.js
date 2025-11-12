@@ -25,7 +25,7 @@ export default async function preview(req, res) {
   res.write(
     `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
     <script>window.location.href = '${url}'</script>
-    </head>`
+    </head>`,
   )
   res.end()
 }

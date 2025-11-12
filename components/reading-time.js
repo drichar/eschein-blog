@@ -4,9 +4,5 @@ const readingTime = require('reading-time')
 export default function ReadingTime({ document }) {
   const plainText = documentToPlainTextString(document)
   const stats = readingTime(plainText)
-  return (
-    <span>
-      {stats.text}
-    </span>
-  )
+  return <span>{stats.text}</span>
 }

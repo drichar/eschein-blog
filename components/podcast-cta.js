@@ -11,20 +11,30 @@ export default function PodcastCta() {
             <span className="block text-blue-600">And More.</span>
           </h2>
           <div className="my-4 prose prose-blue prose-lg xl:prose-xl text-gray-500">
-            <p>Evan is a family law and divorce attorney in New York City, and a partner and the Head of Litigation at <a href="https://www.berkbot.com/" target="_blank">Berkman Bottger Newman &amp; Schein</a>. He is the host of the podcast <Link href="/schein-on"><a><em>Schein On</em></a></Link>, where he and his guests tackle tough legal, financial, and life issues, and talk about sports whenever they have an&nbsp;excuse.</p>
+            <p>
+              Evan is a family law and divorce attorney in New York City, and a
+              partner and the Head of Litigation at{' '}
+              <a href="https://www.berkbot.com/" target="_blank">
+                Berkman Bottger Newman &amp; Schein
+              </a>
+              . He is the host of the podcast{' '}
+              <Link href="/schein-on">
+                <em>Schein On</em>
+              </Link>
+              , where he and his guests tackle tough legal, financial, and life
+              issues, and talk about sports whenever they have an&nbsp;excuse.
+            </p>
           </div>
         </div>
         <div className="mt-10 flex lg:mt-0 lg:ml-16 lg:flex-shrink-0">
           <Link href="/schein-on">
-            <a>
-              <Image
-                className="rounded-lg shadow-lg m-auto md:m-0"
-                src="/images/schein-on.png"
-                alt="Schein On Podcast"
-                width={320}
-                height={320}
-              />
-            </a>
+            <Image
+              className="rounded-lg shadow-lg m-auto md:m-0"
+              src="/images/schein-on.png"
+              alt="Schein On Podcast"
+              width={320}
+              height={320}
+            />
           </Link>
         </div>
       </div>

@@ -9,10 +9,10 @@ export default function PodcastPlayer({ url }) {
       style={{
         width: '100%',
         overflow: 'hidden',
-        background: 'transparent'
+        background: 'transparent',
       }}
       sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
       src={embedUrl}
     ></iframe>
-  );
+  )
 }

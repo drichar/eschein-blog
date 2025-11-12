@@ -2,19 +2,19 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./components/**/*.js', './components/**/*.css'],
+  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   theme: {
     extend: {
       screens: {
-        'adoriFull': '816px',
-        '3xl': '1920px'
+        adoriFull: '816px',
+        '3xl': '1920px',
       },
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         success: '#0070f3',
-        blue: colors.lightBlue,
+        blue: colors.sky,
         green: colors.cyan,
         'white-5': 'var(--es-white-5)',
         'white-10': 'var(--es-white-10)',
@@ -37,7 +37,7 @@ module.exports = {
         'black-80': 'var(--es-black-80)',
         'black-90': 'var(--es-black-90)',
         black: 'var(--es-black)',
-        gray: colors.blueGray
+        gray: colors.slate,
       },
       spacing: {
         28: '7rem',
@@ -60,18 +60,15 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: colors.lightBlue['600'],
+              color: colors.sky['600'],
               '&:hover': {
-                color: colors.lightBlue['700'],
+                color: colors.sky['700'],
               },
             },
           },
         },
-      }
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')
-  ]
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }

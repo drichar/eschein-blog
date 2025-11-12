@@ -7,13 +7,13 @@ export default function ContactContent() {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null }
+    info: { error: false, msg: null },
   })
   const [inputs, setInputs] = useState({
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
   })
 
   const handleServerResponse = (ok, msg) => {
@@ -27,7 +27,7 @@ export default function ContactContent() {
         name: '',
         email: '',
         phone: '',
-        message: ''
+        message: '',
       })
     } else {
       setStatus({
@@ -60,7 +60,7 @@ export default function ContactContent() {
       .then((res) => {
         handleServerResponse(
           true,
-          'Thank you, your message has been submitted.'
+          'Thank you, your message has been submitted.',
         )
       })
       .catch((error) => {
@@ -76,12 +76,15 @@ export default function ContactContent() {
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
         <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="max-w-lg mx-auto">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Contact</h2>
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+              Contact
+            </h2>
             <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
               Get in touch
             </h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
-              Questions about divorce or family law? Thoughts on the podcast? Get in touch with Evan here.
+              Questions about divorce or family law? Thoughts on the podcast?
+              Get in touch with Evan here.
             </p>
             <dl className="mt-8 text-base text-gray-500">
               <div>
@@ -94,26 +97,46 @@ export default function ContactContent() {
               <div className="mt-6">
                 <dt className="sr-only">Phone number</dt>
                 <dd className="flex">
-                  <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <svg
+                    className="flex-shrink-0 h-6 w-6 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
                   </svg>
                   <span className="ml-3">
-                    <a href="tel:+18665249098">
-                      +1 (866) 524-9098
-                    </a>
+                    <a href="tel:+18665249098">+1 (866) 524-9098</a>
                   </span>
                 </dd>
               </div>
               <div className="mt-3">
                 <dt className="sr-only">Email</dt>
                 <dd className="flex">
-                  <svg className="flex-shrink-0 h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="flex-shrink-0 h-6 w-6 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                   <span className="ml-3">
-                    <a href="mailto:eschein@berkbot.com">
-                      eschein@berkbot.com
-                    </a>
+                    <a href="mailto:eschein@berkbot.com">eschein@berkbot.com</a>
                   </span>
                 </dd>
               </div>
@@ -122,9 +145,14 @@ export default function ContactContent() {
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 mb-8">
+            <form
+              onSubmit={handleSubmit}
+              className="grid grid-cols-1 gap-y-6 mb-8"
+            >
               <div>
-                <label htmlFor="name" className="sr-only">Full name</label>
+                <label htmlFor="name" className="sr-only">
+                  Full name
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -136,7 +164,9 @@ export default function ContactContent() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="sr-only">Email</label>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
                 <input
                   id="email"
                   type="email"
@@ -149,7 +179,9 @@ export default function ContactContent() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="sr-only">Phone</label>
+                <label htmlFor="phone" className="sr-only">
+                  Phone
+                </label>
                 <input
                   type="text"
                   id="phone"
@@ -160,7 +192,9 @@ export default function ContactContent() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="sr-only">Message</label>
+                <label htmlFor="message" className="sr-only">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   rows="4"
@@ -185,17 +219,15 @@ export default function ContactContent() {
                     : 'Submitting...'}
                 </Button>
               </div>
-              <input type="hidden" name="_subject" value="New message from scheinondivorce.com" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from scheinondivorce.com"
+              />
             </form>
-            {status.info.error && (
-              <Alert type="error">
-                {status.info.msg}
-              </Alert>
-            )}
+            {status.info.error && <Alert type="error">{status.info.msg}</Alert>}
             {!status.info.error && status.info.msg && (
-              <Alert type="success">
-                {status.info.msg}
-              </Alert>
+              <Alert type="success">{status.info.msg}</Alert>
             )}
           </div>
         </div>

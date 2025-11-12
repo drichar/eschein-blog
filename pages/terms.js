@@ -6,12 +6,12 @@ import { getContentById } from '../lib/api'
 
 export default function Terms({ page }) {
   const options = {
-    renderText: text => {
+    renderText: (text) => {
       return text.split('\n').reduce((children, textSegment, index) => {
-        return [...children, index > 0 && <br key={index} />, textSegment];
-      }, []);
+        return [...children, index > 0 && <br key={index} />, textSegment]
+      }, [])
     },
-  };
+  }
 
   return (
     <>
@@ -34,7 +34,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page: data ?? null
+      page: data ?? null,
     },
   }
 }

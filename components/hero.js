@@ -30,6 +30,7 @@ export default function Hero() {
           className="object-cover object-left"
           alt="Evan standing in front of New York City street"
           fill
+          sizes="50vw"
           priority
         />
       </div>

@@ -9,6 +9,7 @@ export default function CoverImage({ title, coverImage }) {
         width={coverImage.width}
         height={coverImage.height}
         className="mx-auto"
+        priority
       />
     </div>
   )

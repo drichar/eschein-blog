@@ -27,9 +27,9 @@ export default function Hero() {
       <div className="hidden lg:block relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
         <Image
           src="/images/hero.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-left"
+          className="object-cover object-left"
           alt="Evan standing in front of New York City street"
-          layout="fill"
+          fill
           priority
         />
       </div>

@@ -22,8 +22,8 @@ export default function PostPreview({
         <Image
           src={coverImage.url}
           alt={`Cover Image for ${title}`}
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
         />
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">

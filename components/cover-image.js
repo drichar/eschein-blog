@@ -8,6 +8,7 @@ export default function CoverImage({ title, coverImage }) {
         alt={`Cover Image for ${title}`}
         width={coverImage.width}
         height={coverImage.height}
+        className="mx-auto"
       />
     </div>
   )

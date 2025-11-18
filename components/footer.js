@@ -106,13 +106,14 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="https://podcasts.google.com/feed/aHR0cHM6Ly9zdGF0aWMuYWRvcmlsYWJzLmNvbS9mZWVkL3NjaGVpbi1vbi54bWw"
+                href="https://www.youtube.com/@scheinonpodcast7000"
                 target="_blank"
                 className="mt-4 mr-6"
               >
                 <Image
-                  src="/images/subscribe-google.png"
-                  alt="Listen on Google Podcasts"
+                  className="rounded"
+                  src="/images/subscribe-youtube_white.png"
+                  alt="Listen on YouTube"
                   width={126}
                   height={32}
                 />
@@ -126,18 +127,6 @@ export default function Footer() {
                   src="/images/subscribe-spotify.png"
                   alt="Spotify"
                   width={107}
-                  height={32}
-                />
-              </a>
-              <a
-                href="https://www.breaker.audio/p/schein-on"
-                target="_blank"
-                className="mt-4 mr-6"
-              >
-                <Image
-                  src="/images/subscribe-breaker.png"
-                  alt="Listen on Breaker"
-                  width={124}
                   height={32}
                 />
               </a>
@@ -159,21 +148,9 @@ export default function Footer() {
                 className="mt-4 mr-6"
               >
                 <Image
-                  src="/images/subscribe-radiopublic.png"
+                  src="/images/subscribe-radiopublic-red.png"
                   alt="Radio Public"
                   width={95}
-                  height={32}
-                />
-              </a>
-              <a
-                href="https://www.stitcher.com/show/schein-on"
-                target="_blank"
-                className="mt-4 mr-6"
-              >
-                <Image
-                  src="/images/subscribe-stitcher.png"
-                  alt="Stitcher"
-                  width={77}
                   height={32}
                 />
               </a>
